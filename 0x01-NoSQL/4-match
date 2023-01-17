@@ -1,0 +1,3 @@
+lines (2 sloc)  117 Bytes
+//lists all documents where name is hbs
+db.school.find({ name : "Holberton school" })
