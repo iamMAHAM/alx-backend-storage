@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 """
-Insert a document in Python
+updates documents
 """
 
 
-def insert_school(mongo_collection, **kwargs):
+def update_topics(mongo_collection, name, topics):
     """
-     inserts a new document in a
-      collection based on kwargs
+    updates documents matching filters
     """
-    new_documents = mongo_collection.insert_one(kwargs)
-    return new_documents.inserted_id
+    mongo_collection.update_many({"name": name}, {"$set": {"topics": topics}})
